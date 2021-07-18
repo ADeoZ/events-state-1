@@ -7,7 +7,7 @@ export default function ProjectList({ projects }) {
       {projects.map((project) => {
         return (
           <div key={Math.random()}>
-            <img src={project.img} alt={project.category}/>
+            <img src={project.img} alt={project.category} />
           </div>
         );
       })}
