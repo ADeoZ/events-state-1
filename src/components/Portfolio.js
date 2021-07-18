@@ -78,11 +78,13 @@ export default class Portfolio extends React.Component {
     return (
       <div className="Portfolio">
         <Toolbar
-          filters={this.state.filters}
-          selected={this.state.selected}
+          // filters={[this.state.filters]}
+          // selected={this.state.selected}
           onSelectFilter={this.onSelectFilter}
         />
-        <ProjectList projects={this.state.selected === 'All' ? this.projects : this.projects.filter((project) => project.category === this.state.selected)}/>
+        <ProjectList
+          projects={this.state.selected === 'All' ? this.projects : this.projects.filter((project) => project.category === this.state.selected)}
+        />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Toolbar({filters, selected, onSelectFilter}) {
+export default function Toolbar({ filters, selected, onSelectFilter }) {
   return (
     <div className="Toolbar">
       {filters.map((filter) => {
@@ -9,7 +9,8 @@ export default function Toolbar({filters, selected, onSelectFilter}) {
           <div
             key={filter}
             className={filter === selected ? "Toolbar-button Toolbar-button-selected" : "Toolbar-button"}
-            onClick={() => onSelectFilter(filter)}>
+            onClick={() => onSelectFilter(filter)}
+          >
               {filter}
           </div>
         );
@@ -23,3 +24,9 @@ Toolbar.propTypes = {
     selected: PropTypes.string,
     onSelectFilter: PropTypes.func,
 }
+
+Toolbar.defaultProps = {
+  filters: ['All'],
+  selected: 'All',
+  onSelectFilter: () => {},
+};
